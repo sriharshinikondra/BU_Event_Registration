@@ -1,0 +1,13 @@
+%h3 Details about #{@eventname.title}
+%ul#details
+  %li
+    Eventname code:
+    = @eventname.eventnamecode
+  %li
+    Title:
+    = @eventname.title
+%h4 Description:
+%p#description= @eventname.description
+= link_to 'Edit', edit_eventname_path(@eventname)
+= button_to 'Delete', eventname_path(@eventname), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Back to Eventname list', eventnames_path

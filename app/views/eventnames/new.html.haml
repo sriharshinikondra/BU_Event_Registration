@@ -1,0 +1,11 @@
+%h2 Create New Eventname
+= form_tag eventnames_path do
+  = label :eventname, :eventnamecode, 'Eventname Code', :class => 'col-form-label'
+  = text_field :eventname, :eventnamecode, :class => 'form-control'
+  = label :eventname, :title, 'Title', :class => 'col-form-label'
+  = text_field :eventname, :title, :class => 'form-control'
+  = label :eventname, :description, 'Description', :class => 'col-form-label'
+  = text_field :eventname, :description, :class => 'form-control'
+  %br
+  = submit_tag 'Save', :class => 'btn btn-primary'
+  = link_to 'Cancel', eventnames_path, :class => 'btn btn-secondary'

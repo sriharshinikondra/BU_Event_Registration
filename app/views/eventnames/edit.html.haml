@@ -1,0 +1,11 @@
+%h2 Edit Existing Movie
+= form_tag eventname_path(@eventname), :method => :put do
+  = label :eventname, :eventnamecode, 'Eventnamecode', :class => 'col-form-label'
+  = text_field :eventname, 'eventnamecode', :class => 'form-control'
+  = label :eventname, :title, 'Title', :class => 'col-form-label'
+  = text_field :eventname, 'title', :class => 'form-control'
+  = label :eventname, :description, 'Description', :class => 'col-form-label'
+  = text_field :eventname, 'description', :class => 'form-control'
+  %br/
+  = submit_tag 'Update Event Details', :class => 'btn btn-primary'
+  = link_to 'Cancel', eventnames_path, :class => 'btn btn-secondary'

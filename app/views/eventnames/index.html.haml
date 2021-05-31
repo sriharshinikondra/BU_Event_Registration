@@ -1,0 +1,36 @@
+/ This file is app/views/movies/index.html.erb
+%h4.text-center List of  Eventnames
+
+%h6.text-right 
+  = link_to 'Create new Event', new_eventname_path
+
+  %table#movies.table.table-striped.col-md-12
+    %thead
+      %tr
+        %th Event Name Code
+        %th Title
+        %th Description
+        %th Created Date
+       
+
+    %tbody
+      - @eventnames.each do |eventname|
+        %tr
+          %td
+            = eventname.eventnamecode
+          %td
+            = eventname.title
+          %td
+            = eventname.description
+          %td
+            = eventname.created_at
+          %td
+            = link_to "More about #{eventname.title}", eventname_path(eventname)
+          %td
+            = link_to 'Show', eventname
+          %td
+            = link_to 'Edit', edit_eventname_path(eventname)
+          %td
+            = link_to 'Destroy', eventname, method: :delete, data: { confirm: 'Are you sure?' }
+          %td
+            = button_to 'Register', eventname, method: :register, data: { confirm: 'Are you sure want to register?' }
