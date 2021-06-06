@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   skip_before_action :keep_out_unless_logged_in, only: [:create, :clear, :debug]
 
   def clear
-    session.clear
-    redirect_to welcome_landing_path
+    #session.clear
+    #redirect_to welcome_landing_path
   end
 
   def create
@@ -35,15 +35,15 @@ class SessionsController < ApplicationController
   end
   
   def debug
-    puts '\n raw auth_hash\n'
-    p @auth_hash
-    puts '\n\nauth_hash by key\n'
+   # puts '\n raw auth_hash\n'
+    #p @auth_hash
+    #puts '\n\nauth_hash by key\n'
     @auth_hash.each_pair do |key, value|
-      puts "\nKEY: #{key}"
+      #puts "\nKEY: #{key}"
       if value.kind_of?(Hash)
         nested_hash(value, '')
       else
-        puts "Value: #{value}"
+        #puts "Value: #{value}"
       end
     end
     redirect_to welcome_landing_path
@@ -51,9 +51,9 @@ class SessionsController < ApplicationController
   
   def failure
     begin
-    rescue Exception => exception    
-      flash[:warning] = "#{exception.class}:  #{exception.message}" 
-      redirect_to welcome_landing_path
+   # rescue Exception => exception    
+    #  flash[:warning] = "#{exception.class}:  #{exception.message}" 
+     # redirect_to welcome_landing_path
     end
   end
 
@@ -67,22 +67,22 @@ class SessionsController < ApplicationController
     
   private
   
-  def nested_hash nh, indent
-    puts indent + "VALUE is a nested hash"
-    indent += '  '
-    nh.each_pair do |key, value|
-      puts indent + "KEY: #{key}"
-      if value.kind_of?(Hash)
-        nested_hash(value, indent)
-      else
-        puts indent + "VALUE:  #{value}"
-      end     
-    end
-  end
+#   def nested_hash nh, indent
+#     puts indent + "VALUE is a nested hash"
+#     indent += '  '
+#     nh.each_pair do |key, value|
+#       puts indent + "KEY: #{key}"
+#       if value.kind_of?(Hash)
+#         nested_hash(value, indent)
+#       else
+#         puts indent + "VALUE:  #{value}"
+#       end     
+#     end
+#   end
   
   def auth_hash
     #ensures that it's only retrieved once per cycle
     @auth_hash ||= request.env['omniauth.auth']
-    p @auth_hash
+    #p @auth_hash
   end
 end

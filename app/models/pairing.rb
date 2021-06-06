@@ -1,2 +1,2 @@
-class Pairing < ActiveRecord::Base
-end
+# class Pairing < ActiveRecord::Base
+# end

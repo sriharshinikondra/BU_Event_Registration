@@ -13,9 +13,9 @@ describe EventnamesController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end 
-    let(:eventname1) {instance_double('Eventname', eventnamecode: '12345', title: 'Graduation ceremony', description: 'Econ', create_date: '1977-05-25')}
-    let(:eventname2) {instance_double('Eventname', eventnamecode: '127A5', title: 'commencement', description: 'Plants and animals', create_date: '1971-03-11')}
-    let(:eventname3) {instance_double('Eventname', eventnamecode: '190H5', title: 'farewell', description: 'Maps and directions', create_date: '1982-06-25')}
+    let(:eventname1) {instance_double('Eventname', eventnamecode: '12345', title: 'Graduation ceremony', description: 'Econ')}
+    let(:eventname2) {instance_double('Eventname', eventnamecode: '127A5', title: 'commencement', description: 'Plants and animals')}
+    let(:eventname3) {instance_double('Eventname', eventnamecode: '190H5', title: 'farewell', description: 'Maps and directions')}
     let(:eventnames) { [eventname1, eventname2, eventname3] }
     it 'Retrieves all of the eventnames' do
       allow(Eventname).to receive(:all).and_return([eventname1, eventname2, eventname3])
@@ -42,7 +42,7 @@ describe EventnamesController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end 
-    let(:params) { {eventnamecode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25'} }
+    let(:params) { {eventnamecode: '12345', title: 'Economics', description: 'Econ'} }
     let(:eventname) { instance_double('Eventname', params)}
     let(:id1) {'1'}
     it 'Creates a new eventname' do
@@ -67,7 +67,7 @@ describe EventnamesController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end
-    let(:eventname1) {instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    let(:eventname1) {instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ')}
     let(:id1) {'1'}
     it 'Retrieves the eventname' do
       expect(controller).to receive(:set_eventname).and_return(eventname1)
@@ -93,7 +93,7 @@ describe EventnamesController, type: :controller do
       @current_user = @user      
     end
     let(:id1) {'1'}
-    let(:eventname){instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    let(:eventname){instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ')}
     it 'Retrieves the eventname' do
       expect(controller).to receive(:set_eventname).and_return(eventname)
       get :edit, id: id1 
@@ -117,7 +117,7 @@ describe EventnamesController, type: :controller do
       @current_user = @user      
     end
     let(:id1) {'1'}
-    let(:eventname) {instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25')}
+    let(:eventname) {instance_double('Eventname', eventnamecode: '12345', title: 'Economics', description: 'Econ')}
     it 'Retrieves the eventname' do
       expect(controller).to receive(:set_eventname).and_return(eventname)
       allow(eventname).to receive(:destroy)
@@ -148,7 +148,7 @@ describe EventnamesController, type: :controller do
       session[:user_id] = @user.id      
       @current_user = @user      
     end
-    let(:params) { {eventnamecode: '12345', title: 'Economics', description: 'Econ', create_date: '1977-05-25'} }
+    let(:params) { {eventnamecode: '12345', title: 'Economics', description: 'Econ'} }
     let(:eventname) { instance_double('Eventname', params)}
     let(:id1) {'1'}
     let(:updated){ instance_double('Eventname', title: 'Zoology', description: 'Animals') }

@@ -2,22 +2,22 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
-  def index
-    @profiles = Profile.all
-  end
+#   def index
+#     #@profiles = Profile.all
+#   end
 
-  # GET /profiles/1
-  def show
-  end
+#   # GET /profiles/1
+#   def show
+#   end
 
-  # GET /profiles/new
-  def new
-    @profile = Profile.new
-  end
+#   # GET /profiles/new
+#   def new
+#     #@profile = Profile.new
+#   end
 
-  # GET /profiles/1/edit
-  def edit
-  end
+#   # GET /profiles/1/edit
+#   def edit
+#   end
 
   # POST /profiles
   def create
@@ -41,8 +41,8 @@ class ProfilesController < ApplicationController
 
   # DELETE /profiles/1
   def destroy
-    @profile.destroy
-    redirect_to profiles_url, notice: 'Profile was successfully destroyed.'
+   # @profile.destroy
+   # redirect_to profiles_url, notice: 'Profile was successfully destroyed.'
   end
 
   private

@@ -1,23 +1,23 @@
-class PairingsController < ApplicationController
-  before_action :set_pairing, only: [:show, :edit, :update, :destroy]
+# class PairingsController < ApplicationController
+#   before_action :set_pairing, only: [:show, :edit, :update, :destroy]
   
-  def index
-    @pairings = Pairing.all
-  end
+#   def index
+#     @pairings = Pairing.all
+#   end
   
-  def show
-  end
+#   def show
+#   end
   
-  def edit
-  end
+#   def edit
+#   end
   
-  def update
+#   def update
     
-  end
+#   end
   
-  def destroy
+#   def destroy
     
-  end
+#   end
   
   
-end
+# end

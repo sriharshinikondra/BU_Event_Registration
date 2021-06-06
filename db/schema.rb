@@ -10,7 +10,9 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 20210525150804) do
+
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -18,7 +20,9 @@ ActiveRecord::Schema.define(version: 20210525150804) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id"
+
   create_table "eventnames", force: :cascade do |t|
     t.string   "eventnamecode"
     t.string   "title"
@@ -26,6 +30,7 @@ ActiveRecord::Schema.define(version: 20210525150804) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.string   "rating"
@@ -34,14 +39,16 @@ ActiveRecord::Schema.define(version: 20210525150804) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
   create_table "pairings", force: :cascade do |t|
-    t.string   "tutor"
+    t.string   "eventorganiser"
     t.string   "student"
-    t.string   "subject"
+    t.string   "eventname"
     t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
+
   create_table "profiles", force: :cascade do |t|
     t.string   "primary_language"
     t.string   "secondary_language"
@@ -52,20 +59,25 @@ ActiveRecord::Schema.define(version: 20210525150804) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
   create_table "schedules", force: :cascade do |t|
     t.string   "eventorganiser"
     t.string   "eventname"
     t.string   "student"
     t.datetime "timeslot"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-   end
-  add_index "schedules", ["subjects_id"], name: "index_schedules_on_subjects_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "schedules", [nil], name: "index_schedules_on_eventnames_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end

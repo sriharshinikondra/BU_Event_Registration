@@ -17,7 +17,7 @@ module NavigationHelpers
       root_path
 
     when /^the BU Event Registration Home Page$/
-      pairings_path
+      eventnames_path
       
     when /^the BU Event Registration Landing Page$/
       welcome_landing_path

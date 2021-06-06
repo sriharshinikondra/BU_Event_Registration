@@ -22,4 +22,4 @@ Scenario: logout
   When I press "Log Out"
   Then I will see "Tester SUNY has logged out."  
   And I am on the BU Event Registration Landing Page
-  And I will see "Instructions"
+  And I will see "About Us"

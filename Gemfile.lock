@@ -57,7 +57,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     crass (1.0.6)
     cucumber (3.2.0)
       builder (>= 2.1.2)
@@ -91,6 +91,11 @@ GEM
     execjs (2.8.1)
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     faraday (1.4.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -150,7 +155,7 @@ GEM
     multi_test (0.1.2)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    nokogiri (1.11.6)
+    nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     oauth2 (1.4.7)
@@ -291,6 +296,7 @@ DEPENDENCIES
   cucumber-rails-training-wheels
   database_cleaner (= 1.4.1)
   factory_bot
+  factory_girl_rails
   figaro
   haml
   haml-rails (~> 1.0.0)
