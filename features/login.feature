@@ -2,7 +2,7 @@
 
 Feature: Login
   As a registered member
-  So that can see information about movies that interest me
+  So that can see information about events that interest me
   I want to login to the BU Event Registration application
 
 Background: authorization and user in database  # <---- Add this block
